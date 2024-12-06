@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Crud</title>
+</head>
+<body>
+    <section>
+        <div class="container w-75 py-5">
+            <div class="row">
+                <div class="col-lg-12 p-0">
+                    <div class="form-floating mb-3">
+                        <input oninput="vaildinputs(this , 'errorName' )" type="text" class="form-control is-valid is-invalid" id="ProductName" placeholder="Product Name">
+                        <label for="floatingInput">Product Name</label>
+                        <p id="errorName" class=" alert alert-danger mt-2 d-none">Product Name should start with capital letter then at least three to eight small letter </p>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input oninput="vaildinputs(this , 'errorPrice' )" type="number" class="form-control is-valid is-invalid" id="ProductPrice" placeholder="Product Price">
+                        <label for="floatingPassword">Product Price</label>
+                        <p id="errorPrice" class="alert alert-danger mt-2 d-none">Product price should start with at least one to five number then if you want . and at max two number like it ("10000.50") </p>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input oninput="vaildinputs(this , 'errorCategory' )" list="Category" type="text" class="form-control is-valid is-invalid" id="ProductCategory" placeholder="Product Category">
+                        <label for="floatingInput">Product Category</label>
+                        <datalist id="Category">
+                         <option value="TV">
+                         <option value="Mobile">
+                         <option value="Laptop">
+                         <option value="Screens">
+                        </datalist>
+                        <p id="errorCategory" class=" alert alert-danger mt-2 d-none">Product Category should be TV or Mobile or Laptop or Screens</p>
+                    </div>
+                      <div class="form-floating mb-3">
+                        <input oninput="vaildinputs(this , 'errorFile' )" type="file" class="form-control is-valid is-invalid" id="ProductImage" placeholder="Product Image">
+                        <label for="floatingPassword">Product Image</label>
+                        <p id="errorFile" class="alert alert-danger mt-2 d-none">Product Image should start with ./Images/ then any name of your img</p>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <textarea oninput="vaildinputs(this , 'errorDescription' )" class="form-control is-valid is-invalid" placeholder="ProductDescription" id="ProductDescription"></textarea>
+                        <label for="floatingTextarea">Product Description</label>
+                        <p id="errorDescription" class="alert alert-danger mt-2 d-none">Product Description should be max 50 letter</p>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input onkeyup="searchProduct()" type="text" class="form-control" id="SearchProduct" placeholder="SearchProduct">
+                        <label for="floatingInput">Search Product</label>
+                      </div>
+                    </div>
+                    <button id="btnAdd" onclick="AddProduct()" type="button" class="btn btn-outline-primary mb-3">Add</button>
+                    <button id="btnupdate" onclick="updateProduct(`${indx}`)" type="button" class="btn btn-outline-primary mb-3">Update</button>
+                    
+                 </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div  class="container w-75">
+            <div id="ShowProduct" class="row g-5">
+               
+            </div>
+            
+        </div>
+    </section>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
